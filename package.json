@@ -1,0 +1,45 @@
+{
+  "name": "vl-ui-popover",
+  "version": "0.0.0",
+  "description": "Een popover is een nieuw, meestal kleiner venster dat verschijnt bovenop andere content op het scherm. Gebruik een popover om bijkomende informatie aan de gebruiker te geven of om de gebruiker om interactie te vragen. Een popover kan gesloten worden door buiten het popover venster te klikken, of op hetzelfde icoon dat de popover opende.",
+  "scripts": {
+    "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
+    "prepare:util": "npm explore vl-ui-util -- npm run util",
+    "test": "wct -l chrome,firefox --npm",
+    "release": "np",
+    "release:prepare": "npm run release:prepare:build && npm run release:prepare:imports && npm run release:prepare:css && npm run release:prepare:commit",
+    "release:prepare:build": "uglifyjs --compress --mangle --output vl-popover.js -- *.src.js",
+    "release:prepare:imports": "replace '/node_modules/vl-ui-core/vl-core.src.js' '/node_modules/vl-ui-core/vl-core.js' vl-popover.js",
+    "release:prepare:css": "replace '\\.\\./style.css' '/node_modules/vl-ui-popover/style.css' vl-popover.js",
+    "release:prepare:commit": "git add -f vl-popover.js && git commit --amend --no-edit && git pull",
+    "release:testless": "np --yolo",
+    "demo": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-popover.git"
+  },
+  "author": "DIDM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponent-vl-popover/issues"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-popover#readme",
+  "dependencies": {
+    "vl-ui-util": "^2.0.5",
+    "vl-ui-core": "^2.0.0"
+  },
+  "devDependencies": {
+    "@govflanders/vl-ui-util": "^3.9.1",
+    "http-server": "0.11.1",
+    "np": "3.0.4",
+    "uglify-js-es6": "2.8.9",
+    "vl-ui-util": "^2.0.0",
+    "wct-browser-legacy": "1.0.2",
+    "web-component-tester": "6.9.2",
+    "replace": "^1.1.1"
+  },
+  "publishConfig": {
+    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+  }
+}
