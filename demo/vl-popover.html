@@ -4,8 +4,40 @@
         <title>vl-popover voorbeeld</title>
         <script type="module" src="demo.js"></script>
         <script type="module" src="../vl-popover.src.js"></script>
+        <script type="module" src="/node_modules/vl-ui-map/vl-map.js"></script>;
+        <script type="module" src="/node_modules/vl-ui-button/vl-button.js"></script>;
+        <script type="module" src="/node_modules/vl-ui-icon/vl-icon.js"></script>;
     </head>
 
 	<body>
+       <h1>vl-ui-popover demo</h1>
+        <p>
+            <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/js-components/vl-ui-popover">Meer voorbeelden en documentatie</a>.
+        </p>
+
+        <div>
+            <h2>Popover</h2>
+            <pre>
+                <code class="line-numbers language-markup">
+                </code>
+            </pre>
+                
+		</div>
+		
+		
+		<div is="vl-popover" class="vl-popover vl-popover--closable" data-vl-popover >
+	  			<button class="js-vl-popover__toggle vl-popover__toggle" type="button" aria-expanded="false" secondary>
+	            	<span is="vl-icon" icon="location"></span><span class="vl-u-hidden"></span>
+	  			</button>
+				<div class="vl-popover__content" style="width: 100%;">
+			<vl-map>
+				<vl-map-baselayer-grb-ortho></vl-map-baselayer-grb-ortho>
+			</vl-map>
+	
+      <button class="vl-popover__close-btn vl-vi vl-vi-cross" tabindex="0">
+        <span class="vl-u-visually-hidden">Close popover</span>
+      </button>
+    </div>
+  </div>
     </body>
 </html>

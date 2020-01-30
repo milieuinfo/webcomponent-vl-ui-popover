@@ -31,6 +31,10 @@
   },
   "devDependencies": {
     "@govflanders/vl-ui-util": "^3.9.1",
+    "@govflanders/vl-ui-popover": "^3.9.1",
+    "vl-ui-map": "^2.0.1",
+    "vl-ui-icon": "^2.1.1",
+    "vl-ui-button": "^2.0.0",
     "http-server": "0.11.1",
     "np": "3.0.4",
     "uglify-js-es6": "2.8.9",
