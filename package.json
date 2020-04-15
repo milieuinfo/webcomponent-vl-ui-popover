@@ -32,7 +32,7 @@
   "devDependencies": {
     "@govflanders/vl-ui-util": "^3.9.1",
     "http-server": "0.12.1",
-    "np": "3.0.4",
+    "np": "3.1.0",
     "uglify-js-es6": "2.8.9",
     "vl-ui-util": "^5.1.6",
     "wct-browser-legacy": "1.0.2",
