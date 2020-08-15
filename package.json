@@ -27,7 +27,7 @@
   "homepage": "https://github.com/milieuinfo/webcomponent-vl-popover#readme",
   "dependencies": {
     "vl-ui-util": "^2.0.5",
-    "vl-ui-core": "^2.0.0"
+    "vl-ui-core": "^6.0.0"
   },
   "devDependencies": {
     "@govflanders/vl-ui-util": "^3.9.1",
